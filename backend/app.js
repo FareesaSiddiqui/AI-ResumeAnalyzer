@@ -11,7 +11,7 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser()); // 👈 Add this before routes
 app.use(express.json());
 app.use(cors({
-    origin : "https://ai-resume-analyzer-jwb0rxw5s.vercel.app",
+    origin : "ai-resume-analyzer-taupe-nine.vercel.app",
     credentials:true,
 
 }))
