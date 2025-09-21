@@ -34,7 +34,7 @@ const AuthModal = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = isSignup ? "api/auth/signup" : "api/auth/login";
+    const endpoint = isSignup ? "/api/auth/signup" : "/api/auth/login";
 
     try {
 
