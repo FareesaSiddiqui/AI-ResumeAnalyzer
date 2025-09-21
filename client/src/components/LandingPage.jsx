@@ -5,7 +5,7 @@ import AuthModal from "./AuthModal";
 import { fetchWithAuth } from "../../utils/fetchWithAuth";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-const API_URL = process.env.REACT_APP_API_URL
+const API_URL = "https://ai-resumeanalyzer-backend.onrender.com"
 
 const LandingPage = () => {
   const navigate = useNavigate();
