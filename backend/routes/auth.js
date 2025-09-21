@@ -52,7 +52,7 @@ router.post("/login", async (req, res) => {
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       secure: true, //true in production
-      sameSite: "strict",
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
       path : '/',
     });
@@ -105,7 +105,7 @@ router.get('/refresh', async (req, res) => {
 router.post("/logout", (req, res) => {
   res.clearCookie("refreshToken", {
     httpOnly: true,
-    secure: false,
+    secure: true,
     sameSite: "strict",
   });
   return res.status(200).json({ message: "Logged out successfully" });
