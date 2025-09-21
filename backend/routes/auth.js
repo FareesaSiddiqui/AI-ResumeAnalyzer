@@ -85,7 +85,7 @@ router.get('/refresh', async (req, res) => {
     const newAccessToken = jwt.sign(
       { id: user._id },
       process.env.JWT_SECRET,
-      { expiresIn: "15m" }
+      { expiresIn: "15s" }
     );
 
     // (Optional) You can also rotate the refresh token if desired

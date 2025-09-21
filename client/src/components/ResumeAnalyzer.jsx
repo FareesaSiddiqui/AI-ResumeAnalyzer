@@ -42,6 +42,8 @@ const res = await fetchWithAuth('http://localhost:3000/api/analyze', 'POST', for
   const checkAuth = async () => {
     try {
       const res = await fetchWithAuth('http://localhost:3000/api/ping');
+      console.log('hello this is the ping api');
+      
       console.log('🔓 User authenticated:', res.data);
     } catch (err) {
       console.error('❌ User not authenticated:', err);
