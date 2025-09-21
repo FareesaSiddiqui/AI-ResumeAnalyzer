@@ -34,9 +34,10 @@ const AuthModal = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = isSignup ? "/auth/signup" : "/auth/login";
+    const endpoint = isSignup ? "api/auth/signup" : "api/auth/login";
 
     try {
+
       const res = await axios.post(endpoint, form);
       if (!isSignup) {
         localStorage.setItem("accessToken", res.data.accessToken);

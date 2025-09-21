@@ -1,4 +1,6 @@
 import axios from "axios";
+const API_URL = process.env.REACT_APP_API_URL
+
 
 export async function fetchWithAuth(url, method = 'GET', data = null) {
   try {
@@ -36,7 +38,7 @@ export async function fetchWithAuth(url, method = 'GET', data = null) {
         console.warn('🔄 Token expired. Trying to refresh...');
 
         try {
-          const refreshResponse = await axios.get('http://localhost:3000/api/auth/refresh', {
+          const refreshResponse = await axios.get(`${API_URL}/api/auth/refresh`, {
             withCredentials: true,
           });
 

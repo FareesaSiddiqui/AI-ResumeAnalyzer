@@ -5,7 +5,7 @@ import AuthModal from "./AuthModal";
 import { fetchWithAuth } from "../../utils/fetchWithAuth";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-
+const API_URL = process.env.REACT_APP_API_URL
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -41,7 +41,7 @@ const LandingPage = () => {
 
 const handleLogout = async () => {
   try {
-    await axios.post("http://localhost:3000/api/auth/logout", {}, {
+    await axios.post(`${API_URL}/api/auth/logout`, {}, {
       withCredentials: true, // important for sending the refresh cookie
     });
 

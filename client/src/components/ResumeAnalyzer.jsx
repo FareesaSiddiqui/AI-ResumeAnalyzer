@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { fetchWithAuth } from '../../utils/fetchWithAuth';
 import { useNavigate } from 'react-router-dom'; // ✅ import this
+const API_URL = process.env.REACT_APP_API_URL
 
 const ResumeAnalyzer = () => {
     const navigate = useNavigate(); // ✅ hook for navigation
@@ -26,7 +27,7 @@ const ResumeAnalyzer = () => {
     formData.append('file', file);
 
     try {
-const res = await fetchWithAuth('http://localhost:3000/api/analyze', 'POST', formData);
+const res = await fetchWithAuth(`${API_URL}/api/analyze`, 'POST', formData);
       setResult(res.data);
     } catch (err) {
       alert("Something went wrong. Try again!");
