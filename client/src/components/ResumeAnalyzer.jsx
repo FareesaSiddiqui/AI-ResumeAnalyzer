@@ -42,7 +42,7 @@ const res = await fetchWithAuth(`${API_URL}/api/analyze`, 'POST', formData);
   useEffect(() => {
   const checkAuth = async () => {
     try {
-      const res = await fetchWithAuth('http://localhost:3000/api/ping');
+      const res = await fetchWithAuth(`${API_URL}/api/ping`);
       console.log('hello this is the ping api');
       
       console.log('🔓 User authenticated:', res.data);
